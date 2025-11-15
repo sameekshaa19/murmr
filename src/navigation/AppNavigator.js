@@ -3,17 +3,16 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { COLORS, FONTS, FONT_SIZES } from '../utils/theme';
 import { SCREENS } from '../utils/constants';
 
-// Screens
+// Import screens
 import HomeScreen from '../screens/HomeScreen';
 import RecordScreen from '../screens/RecordScreen';
 import TagScreen from '../screens/TagScreen';
 import NotesListScreen from '../screens/NotesListScreen';
 import PlaybackScreen from '../screens/PlaybackScreen';
-import LocationPickerScreen from '../screens/LocationPickerScreen';   // ✅ NEW SCREEN
+import LocationPickerScreen from '../screens/LocationPickerScreen'; // ← ADD THIS
 
 const Stack = createStackNavigator();
 
@@ -49,50 +48,60 @@ const AppNavigator = () => {
             headerShown: false,
           }}
         />
-
+        
         <Stack.Screen
           name={SCREENS.RECORD}
           component={RecordScreen}
           options={{
             title: 'Record Note',
-            headerStyle: { backgroundColor: COLORS.dark },
+            headerStyle: {
+              backgroundColor: COLORS.dark,
+            },
           }}
         />
-
+        
         <Stack.Screen
           name={SCREENS.TAG}
           component={TagScreen}
           options={{
             title: 'Tag Your Note',
-            headerStyle: { backgroundColor: COLORS.dark },
+            headerStyle: {
+              backgroundColor: COLORS.dark,
+            },
           }}
         />
-
+        
         <Stack.Screen
           name={SCREENS.NOTES_LIST}
           component={NotesListScreen}
           options={{
             title: 'My Notes',
-            headerStyle: { backgroundColor: COLORS.dark },
+            headerStyle: {
+              backgroundColor: COLORS.dark,
+            },
           }}
         />
-
+        
         <Stack.Screen
           name={SCREENS.PLAYBACK}
           component={PlaybackScreen}
           options={{
             title: 'Play Note',
-            headerStyle: { backgroundColor: COLORS.dark },
+            headerStyle: {
+              backgroundColor: COLORS.dark,
+            },
           }}
         />
 
+        {/* ADD THIS NEW SCREEN */}
         <Stack.Screen
           name="LocationPicker"
           component={LocationPickerScreen}
           options={{
             title: 'Pick Location',
-            headerStyle: { backgroundColor: COLORS.dark },
-            headerTintColor: COLORS.primary,
+            headerStyle: {
+              backgroundColor: COLORS.dark,
+            },
           }}
         />
       </Stack.Navigator>
